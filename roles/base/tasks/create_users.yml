@@ -1,3 +1,21 @@
 - name: add users
   user: name={{ item.key }} comment="{{ item.value.fullname }}" group={{ s_base_devops_groupname }} shell=/bin/bash
   with_dict: "{{ s_base_users }}"
+
+# somehow the 'creates' argument of 'shell' does not work
+- name: check rsa key existence
+  stat:
+    path: "/home/{{ item.key }}/.ssh/id_rsa"
+  become: yes
+  become_user: "{{ item.key }}"
+  register: id_stat
+  with_dict: "{{ s_base_users }}"
+
+- name: create keys
+  shell: "ssh-keygen -t rsa -N '' -f /home/{{ item.item.key }}/.ssh/id_rsa"
+  # args:
+  #   creates: "${HOME}/.ssh/id_rsa"
+  become: yes
+  become_user: "{{ item.item.key }}"
+  with_items: id_stat.results
+  when: item.stat.exists == False

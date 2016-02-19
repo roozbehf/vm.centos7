@@ -23,7 +23,7 @@ s_base_additional_packages:
   - vim
   - tree
   - tmux
-  # - cronie
+  - cronie
 
 s_base_users:
   roozbeh:
