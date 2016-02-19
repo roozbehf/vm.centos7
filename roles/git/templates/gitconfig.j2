@@ -1,0 +1,14 @@
+# {{ ansible_managed }}
+
+[user]
+  name = {{ item.value.fullname }}
+  email = {{ item.value.git_email }}
+
+[color]
+  ui = true
+
+[push]
+  default = simple
+
+[branch]
+	autosetuprebase = always
