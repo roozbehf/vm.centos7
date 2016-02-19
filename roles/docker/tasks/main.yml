@@ -1,0 +1,26 @@
+---
+- name: add Docker repository
+  template:
+    src: docker.repo
+    dest: /etc/yum.repos.d/docker.repo
+  #
+  # yumrepo:
+  #   name: dockerrepo
+  #   description: Docker Repository
+  #   baseurl: https://yum.dockerproject.org/repo/main/centos/$releasever/
+  #   enabled: yes
+  #   gpgcheck: yes
+
+- name: create a docker group
+  group: name=docker
+
+- name: install Docker engine
+  yum: name=docker-engine state=present
+
+- name: enable and start Docker
+  service: name=docker state=started enabled=yes
+
+- name: add devops user to docker
+  user: name={{ item.key }} groups=docker append=yes
+  with_dict: "{{ s_base_users }}"
+  

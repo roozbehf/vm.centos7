@@ -13,3 +13,4 @@
     # - {role: mariadb, tags: ["mariadb", "lamp"]}
     # - {role: apache, tags: ["apache", "lamp"]}
     # - {role: cron.scripts, tags: ["scripts", "cron"]}
+    - {role: docker, tags: ['docker']}
