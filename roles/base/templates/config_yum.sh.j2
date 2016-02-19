@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+grep "proxy=" /etc/yum.conf
+if [ $? != 0 ]
+then
+  echo "proxy=http://{{ s_base_proxy_host }}:{{ s_base_proxy_port }}" >> /etc/yum.conf
+fi
+

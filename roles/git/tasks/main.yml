@@ -1,0 +1,8 @@
+---
+- name: add git package
+  yum: name=git state=present
+
+- name: config git post
+  shell: git config --global http.postBuffer 524288000
+  environment:
+    PATH: "/usr/local/git/bin:{{ ansible_env.PATH }}"

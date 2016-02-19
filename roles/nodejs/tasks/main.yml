@@ -1,0 +1,8 @@
+---
+- include: latest_install.yml
+  when: nodejs_latest
+
+- include: package_install.yml
+
+- name: install pm2
+  npm: name=pm2 state=present global=yes

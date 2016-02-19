@@ -1,0 +1,26 @@
+---
+s_base_devops_groupname: sudo
+
+s_base_use_proxy: false
+
+s_base_proxy_host: 10.221.82.52
+s_base_proxy_port: 3128
+
+#possible values:
+#white = linode
+#green = internal
+
+s_base_cloud_zone: "white"
+
+s_base_hosts: true
+
+s_base_devops_repo: true
+
+# set this to true if the OS's repo links need to be updated
+s_base_vm_repo_update: false
+
+s_base_etc_hosts: []
+
+s_base_disable_iptables: False
+
+s_base_additional_packages:

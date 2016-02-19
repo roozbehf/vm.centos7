@@ -1,0 +1,3 @@
+- name: add users
+  user: name={{ item.key }} comment="{{ item.value.fullname }}" group={{ s_base_devops_groupname }} shell=/bin/bash
+  with_dict: "{{ s_base_users }}"

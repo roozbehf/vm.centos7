@@ -1,0 +1,13 @@
+---
+- name: install basic tools
+  yum: name={{ item }} state=installed
+  with_items:
+    - zip
+    - unzip
+    - gzip
+    - tar
+    - bind-utils
+
+- name: install requested packages
+  yum: name="{{ item }}" state=installed
+  with_items: s_base_additional_packages

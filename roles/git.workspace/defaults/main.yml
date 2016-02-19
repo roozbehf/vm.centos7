@@ -1,0 +1,13 @@
+---
+git_workspace_dir: "/home/roozbeh/git"
+git_user: roozbeh
+git_group: "{{ s_base_devops_groupname }}"
+
+reop_servers:
+  gitlab:
+    hostname: "gitlab.com"
+
+repos:
+  playground:
+    src: "gitlab"
+    url: "git@gitlab.com:roozbeh/playground.git"
