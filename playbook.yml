@@ -2,15 +2,8 @@
 - hosts: all
   roles:
     - {role: base, tags: base}
-    # - {role: devops_team, tags: base}
     - {role: git, tags: ["base", "git"]}
     - {role: git.workspace, tags: ["base", "git"]}
     - {role: java, tags: ["base", "java"]}
     - {role: nodejs, tags: ['web_server', 'nodejs']}
-    # - {role: harp, tags: ['web_server', 'harp']}
-    # - {role: g-nginx, tags: nginx}
-    # - {role: nginx.config, tags: ["nginx", "nginx.config"]}
-    # - {role: mariadb, tags: ["mariadb", "lamp"]}
-    # - {role: apache, tags: ["apache", "lamp"]}
-    # - {role: cron.scripts, tags: ["scripts", "cron"]}
     - {role: docker, tags: ['docker']}

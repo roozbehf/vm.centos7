@@ -1,3 +1,0 @@
----
-- name: add devops repo
-  template: src=devops.repo.j2 dest=/etc/yum.repos.d/devops.repo
