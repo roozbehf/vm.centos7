@@ -8,7 +8,12 @@
     dest: /home/{{ item.key }}/.gitconfig
   with_dict: "{{ s_base_users }}"
 
-# - name: config git post
-#   shell: git config --global http.postBuffer 524288000
-#   environment:
-#     PATH: "/usr/local/git/bin:{{ ansible_env.PATH }}"
+- name: add gitlab repo hostkey
+  known_hosts: >
+    name="gitlab.com"
+    key="{{ lookup('file', 'gitlab.key') }}"
+
+- name: add github repo hostkey
+  known_hosts: >
+    name="github.com"
+    key="{{ lookup('file', 'github.key') }}"

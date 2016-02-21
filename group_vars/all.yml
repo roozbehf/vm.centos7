@@ -24,6 +24,10 @@ s_base_additional_packages:
   - tree
   - tmux
   - cronie
+  - asciidoc
+  - rpm-build
+  - python2-devel
+  - python-setuptools
 
 s_base_users:
   roozbeh:
