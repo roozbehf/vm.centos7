@@ -1,0 +1,21 @@
+---
+- name: install go version
+  get_url: url="{{ go_url }}" dest="/usr/local/src/{{ go_tar }}" sha256sum="{{ go_checksum }}"
+
+- name: get go version
+  command: /usr/local/go/bin/go version
+  ignore_errors: yes
+  register: go_ver_retrieved
+  changed_when: false
+
+- name: extract go tar if is not installed
+  command: "tar -C /usr/local -xf /usr/local/src/{{ go_tar }}"
+  when: go_ver_retrieved|failed
+
+- name: add go bin directory GOPATH and GOPATH/bin to the profile
+  copy: src=goenv.sh dest=/etc/profile.d
+
+- name: install gb tool
+  command:  /usr/local/go/bin/go get github.com/constabulary/gb/... creates=/usr/local/go/bin/gb
+  environment:
+    GOPATH: /usr/local

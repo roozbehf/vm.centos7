@@ -6,4 +6,5 @@
     - {role: git.workspace, tags: ["base", "git"]}
     - {role: java, tags: ["base", "java"]}
     - {role: nodejs, tags: ['web_server', 'nodejs']}
+    - {role: gobuild, tags: ['go']}
     - {role: docker, tags: ['docker']}

@@ -1,0 +1,5 @@
+---
+go_version: "1.6"
+go_tar: "go{{ go_version }}.linux-amd64.tar.gz"
+go_url: "http://golang.org/dl/{{ go_tar }}"
+go_checksum: "5470eac05d273c74ff8bac7bef5bad0b5abbd1c4052efbdbc8db45332e836b0b"
