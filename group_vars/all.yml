@@ -30,14 +30,17 @@ s_base_additional_packages:
   - python-setuptools
 
 s_base_users:
-  roozbeh:
-    fullname: Roozbeh Farahbod
-    git_email: research@roozbeh.ca
-    git_user: roozbehf
+  joker:
+    fullname: The Joker
+    git_email: joker@example.com
+    git_user: joker
+  # roozbeh:
+  #   fullname: Roozbeh Farahbod
+  #   git_email: research@roozbeh.ca
+  #   git_user: roozbehf
 
 # put hosts there which should be added to etc hosts in case no DNS is available
 s_base_etc_hosts: []
-#s_base_etc_hosts: [ {ip: '139.168.56.1', name: 'test1'}, {ip: '139.168.56.2', name: 'test2'}]
 
 nginx_extra_http_options: |
   proxy_buffering    off;

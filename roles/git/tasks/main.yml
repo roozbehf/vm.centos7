@@ -8,6 +8,13 @@
     dest: /home/{{ item.key }}/.gitconfig
   with_dict: "{{ s_base_users }}"
 
+- name: ensure .ssh folder exists for root
+  file: >
+    path="/root/.ssh"
+    owner="root"
+    mode=700
+    state=directory
+
 - name: add gitlab repo hostkey
   known_hosts: >
     name="gitlab.com"

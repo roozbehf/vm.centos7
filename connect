@@ -8,4 +8,4 @@ then
   port=$(cat .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory | grep 127.0.0.1 | sed 's/^.*ansible_ssh_port=\(....\)\ .*/\1/g')
 fi
 
-ssh -p $port roozbeh@127.0.0.1
+ssh -p $port joker@127.0.0.1

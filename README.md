@@ -12,6 +12,10 @@ vagrant up
 #### 2. Update configuration
 Update the configuration of the box, if needed, by editing the `group_vars/all.yml` filand potentially the `connect` script (if the default username is changed).
 
+##### List of Users
+By default a user name `joker` will be created. You can configure the list of users
+by modifying the dictionary `s_base_users` in `group_vars/all.yml`.
+
 #### 3. Setup
 Setup the box using Ansible through Vagrant:
 ```
@@ -19,9 +23,31 @@ vagrant provision
 ```
 
 #### 4. Log in
-SSH to the box using the `connect` script:
+Login using vagrant:
 ```
-./connect
+vagrant ssh
 ```
 
-Enjoy!
+## What Is Installed
+Here is a summary of the main packages installed:
+- Git (latest from Yum repo)
+- Java (OpenJDK) 1.8.0
+- Go 1.6
+- Docker (latest release)
+- Ansible 2.0.0.1
+- NodeJS (latest release)
+
+In addition to a set of utility packages, such as:
+- zip
+- unzip
+- gzip
+- tar
+- bind-utils
+- vim
+- tree
+- tmux
+- cronie
+- asciidoc
+- rpm-build
+- python2-devel
+- python-setuptools
