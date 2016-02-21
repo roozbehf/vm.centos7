@@ -1,0 +1,30 @@
+---
+# This file is NOT used and is kept for records only
+
+- name: install rpm-build and other tools
+  yum:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - asciidoc
+    - rpm-build
+    - python2-devel
+    - python-setuptools
+
+- name: clone ansible repo
+  git:
+    repo: "git://github.com/ansible/ansible.git"
+    dest: "/tmp/ansible"
+    force: yes
+    update: yes
+    recursive: yes
+    version: "{{ ansible_version }}"
+
+- name: make ansible RPM
+  shell: make rpm
+  args:
+    chdir: "/tmp/ansible"
+
+# - name: install ansible RPM
+#   yum:
+#     name: "/tmp/ansible/rpm-build/

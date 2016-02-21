@@ -1,0 +1,10 @@
+---
+- name: copy ansible RPM
+  copy:
+    src: "ansible-{{ ansible_ver }}.noarch.rpm"
+    dest: "/tmp"
+
+- name: install ansible
+  yum:
+    name: "/tmp/ansible-{{ ansible_ver }}.noarch.rpm"
+    state: present
