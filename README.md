@@ -22,6 +22,12 @@ Setup the box using Ansible through Vagrant:
 vagrant provision
 ```
 
+Alternatively, in future setups or upgrades, you can limit the run of Ansible roles by a
+set of tags; for example, the following only re-runs the role that installs Nodejs
+```
+env ANSIBLE_TAGS="nodejs" vagrant provision
+```
+
 #### 4. Log in
 Login using vagrant:
 ```
