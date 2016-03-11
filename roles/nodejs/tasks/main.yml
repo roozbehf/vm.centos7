@@ -6,10 +6,7 @@
 
 - name: install global packages
   npm: name={{ item }} state=present global=yes
-  with_items:
-    - pm2
-    - bower
-    - gulp-cli
+  with_items: nodejs_packages
 
 - name: fix npm permissions
   file:

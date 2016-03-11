@@ -35,14 +35,21 @@ vagrant ssh
 ```
 
 ## What Is Installed
+
+### Main Packages
 Here is a summary of the main packages installed:
 - Git (latest from Yum repo)
 - Java (OpenJDK) 1.8.0
 - Go 1.6
 - Docker (latest release)
 - Ansible 2.0.0.1
-- NodeJS (latest release)
+- NodeJS (latest 5.x release)
+  - pm2
+  - bower
+  - gulp-cli
+  - yo
 
+### Utilities
 In addition to a set of utility packages, such as:
 - zip
 - unzip
