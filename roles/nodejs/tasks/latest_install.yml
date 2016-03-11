@@ -1,4 +1,4 @@
 ---
 - name: setup Nodejs repo
-  script: nodejs_repo_setup.sh creates=/etc/yum.repos.d/nodesource-el.repo
-  
+  script: nodejs_repo_setup.sh
+  # creates=/etc/yum.repos.d/nodesource-el.repo
