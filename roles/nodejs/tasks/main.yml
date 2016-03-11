@@ -4,5 +4,16 @@
 
 - include: package_install.yml
 
-- name: install pm2
-  npm: name=pm2 state=present global=yes
+- name: install global packages
+  npm: name={{ item }} state=present global=yes
+  with_items:
+    - pm2
+    - bower
+    - gulp-cli
+
+- name: fix npm permissions
+  file:
+    path="/usr/lib/node_modules"
+    group="{{ s_base_devops_groupname }}"
+    mode=775
+    recurse=yes
