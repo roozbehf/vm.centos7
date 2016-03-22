@@ -10,7 +10,7 @@ This is a Vagrant+Ansible definition of a CentOS 7 box preloaded with a set of b
 vagrant up
 ```
 #### 2. Update configuration
-Update the configuration of the box, if needed, by editing the `group_vars/all.yml` filand potentially the `connect` script (if the default username is changed).
+Update the configuration of the box, if needed, by editing the `group_vars/all.yml` file and potentially the `connect` script (if the default username is changed).
 
 ##### List of Users
 By default a user name `joker` will be created. You can configure the list of users
@@ -32,6 +32,10 @@ env ANSIBLE_TAGS="nodejs" vagrant provision
 Login using vagrant:
 ```
 vagrant ssh
+```
+or
+```
+./connect <optional_SSH_port>
 ```
 
 ## What Is Installed

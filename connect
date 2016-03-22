@@ -3,9 +3,14 @@
 port=2222
 ansible_inv_file=".vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory"
 
-if [ -e ${ansible_inv_file} ]
+if [ -z "$1" ]
 then
-  port=$(cat .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory | grep 127.0.0.1 | sed 's/^.*ansible_ssh_port=\(....\)\ .*/\1/g')
+  if [ -e ${ansible_inv_file} ]
+  then
+    port=$(cat .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory | grep 127.0.0.1 | sed 's/^.*ansible_ssh_port=\(....\)\ .*/\1/g')
+  fi
+else
+  port=$1
 fi
 
 ssh -p $port joker@127.0.0.1
