@@ -83,3 +83,7 @@ In addition to a set of utility packages, such as:
 - rpm-build
 - python2-devel
 - python-setuptools
+
+## Contributors
+- [Roozbeh Farahbod](https://github.com/roozbehf)
+- [Roger Kilian-Kehr](https://github.com/rkiliankehr)
