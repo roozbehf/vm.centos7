@@ -20,7 +20,9 @@
 - name: enable and start Docker
   service: name=docker state=started enabled=yes
 
+- name: add vagrant user to docker
+  user: name=vagrant groups=docker append=yes
+  
 - name: add devops user to docker
   user: name={{ item.key }} groups=docker append=yes
   with_dict: "{{ s_base_users }}"
-  
