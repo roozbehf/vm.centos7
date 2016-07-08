@@ -46,7 +46,30 @@ set of tags; for example, the following only re-runs the role that installs Node
 env ANSIBLE_TAGS="nodejs" vagrant provision
 ```
 
-#### 4. Log in
+#### 4. Save the Box or Take a Snapshot (Optional)
+If you want to avoid building the box again in the future, you can either save the box
+at this point (which will be available system-wide and can be transported), or save
+a snapshot (which is limited to the vagrant configuration stored on the local folder).
+
+##### 4.1. Save the Box
+Simply package your new VM:
+```
+vagrant package dacent --output myDacent.box
+```
+(replace `dacent` with the name of the current box and change `myDacent.box` as needed).
+
+Now you can either transfer this box to another machine,
+or simply add the new box to your set of Vagrant boxes:
+```
+vagrant box add my-dacent myDacent.box
+```
+(change the names as needed).
+
+##### 4.2. Create a Snapshot
+Snapshots are very handy when you want to roll back to an earlier version of your box.
+Follow [the instructions here](https://www.vagrantup.com/docs/cli/snapshot.html) to save and restore them.
+
+#### 5. Log in
 Login using vagrant:
 ```
 vagrant ssh
