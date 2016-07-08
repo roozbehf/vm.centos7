@@ -54,9 +54,9 @@ a snapshot (which is limited to the vagrant configuration stored on the local fo
 ##### 4.1. Save the Box
 Simply package your new VM:
 ```
-vagrant package dacent --output myDacent.box
+vagrant package --base dacent --output myDacent.box
 ```
-(replace `dacent` with the name of the current box and change `myDacent.box` as needed).
+(replace `dacent` with the name of the current box in VirtualBox and change `myDacent.box` as needed).
 
 Now you can either transfer this box to another machine,
 or simply add the new box to your set of Vagrant boxes:
