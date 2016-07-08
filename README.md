@@ -27,6 +27,9 @@ vagrant up
 #### 2. Update configuration
 Update the configuration of the box, if needed, by editing the `group_vars/all.yml` file and potentially the `connect` script (if the default username is changed).
 
+##### Modify the Playbook
+You may not need all the packages that are installed. Modify the roles being applied by editing the `playbook.yml` file.
+
 ##### List of Users
 By default a user name `joker` will be created. You can configure the list of users
 by modifying the dictionary `s_base_users` in `group_vars/all.yml`.
