@@ -5,6 +5,21 @@ This is a Vagrant+Ansible definition of a CentOS 7 box preloaded with a set of b
 
 ## How To
 
+#### 0. Installation
+
+Base installation:
+- Install `vagrant` on your machine.
+- Install `VirtualBox` on your machine.
+
+Install the **Vagrant plugin** that takes care of automatically installing the correct  **VirtualBox Guest Additions** upon provisioning the VM.
+
+```
+vagrant plugin install vagrant-vbguest
+```
+
+This should be all that is needed. If this is for some reason not working please check [Vagrant VirtualBox Plugin](https://github.com/dotless-de/vagrant-vbguest).
+
+
 #### 1. Create the box
 ```
 vagrant up
