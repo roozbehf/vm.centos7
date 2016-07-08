@@ -58,12 +58,15 @@ or
 
 ## What Is Installed
 
-### Main Packages
-Here is a summary of the main packages installed:
+### Packages Installed
+Here is a summary of the main packages that will be installed:
 - Git (latest from Yum repo)
+- Docker (latest release)
+
+### Packages Available
+The following packages are ready to be installed but are disabled in the `playbook.yml` file:
 - Java (OpenJDK) 1.8.0
 - Go 1.6
-- Docker (latest release)
 - Ansible 2.0.0.1
 - NodeJS (latest 5.x release)
   - pm2
@@ -72,7 +75,7 @@ Here is a summary of the main packages installed:
   - yo
 
 ### Utilities
-In addition to a set of utility packages, such as:
+The following utility packages will also be installed:
 - zip
 - unzip
 - gzip
@@ -86,6 +89,7 @@ In addition to a set of utility packages, such as:
 - rpm-build
 - python2-devel
 - python-setuptools
+- dnsmasq
 
 ## Contributors
 - [Roozbeh Farahbod](https://github.com/roozbehf)

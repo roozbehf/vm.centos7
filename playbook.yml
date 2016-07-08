@@ -3,8 +3,10 @@
   roles:
     - {role: base, tags: base}
     - {role: git, tags: ["base", "git"]}
-    - {role: java, tags: ["base", "java"]}
-    - {role: nodejs, tags: ['web_server', 'nodejs']}
-    - {role: gobuild, tags: ['go']}
-    - {role: ansible, tags: ['ansible']}
     - {role: docker, tags: ['docker']}
+
+    # -- you can enable the following roles
+    # - {role: java, tags: ["base", "java"]}
+    # - {role: gobuild, tags: ['go']}
+    # - {role: ansible, tags: ['ansible']}
+    # - {role: nodejs, tags: ['web_server', 'nodejs']}
