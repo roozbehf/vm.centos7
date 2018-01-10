@@ -12,10 +12,11 @@
   with_dict: "{{ s_base_users }}"
 
 - name: create keys
-  shell: "ssh-keygen -t rsa -N '' -f /home/{{ item.item.key }}/.ssh/id_rsa"
-  # args:
-  #   creates: "${HOME}/.ssh/id_rsa"
+  shell: "ssh-keygen -t rsa -N '' -f /home/{{ item.key }}/.ssh/id_rsa"
+  args:
+    creates: "/home/{{ item.key }}/.ssh/id_rsa"
   become: yes
-  become_user: "{{ item.item.key }}"
-  with_items: id_stat.results
-  when: item.stat.exists == False
+  become_user: "{{ item.key }}"
+  with_dict: "{{ s_base_users }}"
+  # with_items: id_stat.results
+  # when: item.stat.exists == False

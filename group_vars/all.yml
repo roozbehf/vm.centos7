@@ -22,7 +22,6 @@ s_base_devops_groupname: sudo
 s_base_additional_packages:
   - vim
   - tree
-  - tmux
   - cronie
   - asciidoc
   - rpm-build
@@ -30,14 +29,14 @@ s_base_additional_packages:
   - python-setuptools
 
 s_base_users:
-  joker:
-    fullname: The Joker
-    git_email: joker@example.com
-    git_user: joker
-  # roozbeh:
-  #   fullname: Roozbeh Farahbod
-  #   git_email: research@roozbeh.ca
-  #   git_user: roozbehf
+  # joker:
+    # fullname: The Joker
+    # git_email: joker@example.com
+    # git_user: joker
+  roozbeh:
+    fullname: Roozbeh Farahbod
+    git_email: research@roozbeh.ca
+    git_user: roozbehf
 
 # put hosts there which should be added to etc hosts in case no DNS is available
 s_base_etc_hosts: []
@@ -59,4 +58,3 @@ nodejs_packages:
   - bower
   - gulp-cli
   - yo
-  

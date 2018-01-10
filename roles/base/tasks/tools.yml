@@ -2,12 +2,21 @@
 - name: install basic tools
   yum: name={{ item }} state=installed
   with_items:
+    - tmux
     - zip
     - unzip
     - gzip
     - tar
     - bind-utils
+    - gcc
+
+- name: install tmux configuration
+  copy:
+    src: tmux.conf
+    dest: "/home/{{ item.key }}/.tmux.conf"
+    owner: "{{ item.key }}"
+  with_dict: "{{ s_base_users }}"
 
 - name: install requested packages
   yum: name="{{ item }}" state=installed
-  with_items: s_base_additional_packages
+  with_items: "{{s_base_additional_packages}}"
